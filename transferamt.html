@@ -1,0 +1,165 @@
+<html>
+<head>
+	<title>Speech to text Converter</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="./trans.css">
+</head>
+<body>
+	<h3 class="title">AMOUNT TRANSFERING FORM:</h3>
+	<div id="result"></div>
+	<div class="form">
+		<div class="sender"><label for="sndr">Sender's Account Number:</label> <input type="text" id="p1">
+	<button onclick="startConverting1();" class="mic1"><i class="fa fa-microphone btn btn-danger" aria-hidden="true" ></i></button></div>
+	 </br></br>
+<div class="recive"><label for="rcvr">Receiver's Account Number:</label> <input type="text" id="p2">
+	<button onclick="startConverting2();" class="mic2"><i class="fa fa-microphone btn btn-danger" aria-hidden="true" ></i></button></div>
+	 </br></br>
+<div class="amount"><label for="amt">Amount:</label> <input type="text" id="p3">
+	<button onclick="startConverting3();" class="mic3"><i class="fa fa-microphone btn btn-danger" aria-hidden="true" ></i></button></div>
+	 </br></br>
+
+	
+
+
+	<input type="submit" value="Submit" class="subb">
+	</div>
+	
+</body>
+
+<script>
+
+		
+  
+		function startConverting1 () 
+		{
+			var result = document.getElementById('p1');
+		    console.log("resulr === " +result);
+
+		if('webkitSpeechRecognition' in window) 
+		{
+			var speechRecognizer = new webkitSpeechRecognition();
+			speechRecognizer.continuous = true;
+			speechRecognizer.interimResults = true;
+			speechRecognizer.lang = 'en-US';
+			speechRecognizer.start();
+
+			var finalTranscripts = '';
+
+			speechRecognizer.onresult = function(event) {
+				var interimTranscripts = '';
+				for(var i = event.resultIndex; i < event.results.length; i++){
+					var transcript = event.results[i][0].transcript;
+					transcript.replace("\n", "<br>");
+					if(event.results[i].isFinal) {
+						finalTranscripts += transcript;
+					}else{
+						interimTranscripts += transcript;
+					}
+				}
+				result.value = finalTranscripts +   interimTranscripts;
+				console.log("8888 "+interimTranscripts);
+				
+				
+				
+			};
+			speechRecognizer.onerror = function (event) 
+			{
+
+			};
+		}
+		else 
+		{
+			result.innerHTML = 'Your browser is not supported. Please download Google chrome or Update your Google chrome!!';
+		}	
+		document.getElementById("p1").innerHTML = "New text!";
+	}
+	function startConverting2 () 
+		{
+			var result = document.getElementById('p2');
+		    console.log("resulr === " +result);
+
+		if('webkitSpeechRecognition' in window) 
+		{
+			var speechRecognizer = new webkitSpeechRecognition();
+			speechRecognizer.continuous = true;
+			speechRecognizer.interimResults = true;
+			speechRecognizer.lang = 'en-US';
+			speechRecognizer.start();
+
+			var finalTranscripts = '';
+
+			speechRecognizer.onresult = function(event) {
+				var interimTranscripts = '';
+				for(var i = event.resultIndex; i < event.results.length; i++){
+					var transcript = event.results[i][0].transcript;
+					transcript.replace("\n", "<br>");
+					if(event.results[i].isFinal) {
+						finalTranscripts += transcript;
+					}else{
+						interimTranscripts += transcript;
+					}
+				}
+				result.value = finalTranscripts +   interimTranscripts;
+				console.log("8888 "+interimTranscripts);
+				
+				
+				
+			};
+			speechRecognizer.onerror = function (event) 
+			{
+
+			};
+		}
+		else 
+		{
+			result.innerHTML = 'Your browser is not supported. Please download Google chrome or Update your Google chrome!!';
+		}	
+		document.getElementById("p2").innerHTML = "New text!";
+	}
+
+	function startConverting3 () 
+		{
+			var result = document.getElementById('p3');
+		    console.log("resulr === " +result);
+
+		if('webkitSpeechRecognition' in window) 
+		{
+			var speechRecognizer = new webkitSpeechRecognition();
+			speechRecognizer.continuous = true;
+			speechRecognizer.interimResults = true;
+			speechRecognizer.lang = 'en-US';
+			speechRecognizer.start();
+
+			var finalTranscripts = '';
+
+			speechRecognizer.onresult = function(event) {
+				var interimTranscripts = '';
+				for(var i = event.resultIndex; i < event.results.length; i++){
+					var transcript = event.results[i][0].transcript;
+					transcript.replace("\n", "<br>");
+					if(event.results[i].isFinal) {
+						finalTranscripts += transcript;
+					}else{
+						interimTranscripts += transcript;
+					}
+				}
+				result.value = finalTranscripts +   interimTranscripts;
+				console.log("8888 "+interimTranscripts);
+				
+				
+				
+			};
+			speechRecognizer.onerror = function (event) 
+			{
+
+			};
+		}
+		else 
+		{
+			result.innerHTML = 'Your browser is not supported. Please download Google chrome or Update your Google chrome!!';
+		}	
+		document.getElementById("p3").innerHTML = "New text!";
+	}
+
+</script>
+</html>

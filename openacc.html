@@ -1,0 +1,397 @@
+<html>
+<head>
+	<title>Speech to text Converter</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<h3 align="center">ACCOUNT OPENING FORM:</h3>
+	<div id="result"></div>
+	
+	<label for="fname">First name:</label> <input type="text" id="p1">
+	<button onclick="startConverting1();"><i class="fa fa-microphone btn btn-danger" aria-hidden="true"></i></button> </br></br>
+
+	<label for="lname">Last name:</label> <input type="text" id="p2">
+	<button onclick="startConverting2();"><i class="fa fa-microphone btn btn-danger" aria-hidden="true"></i></button> </br></br>
+
+	<label for="gender">Gender:</label> <input type="text" id="p3">
+	<button onclick="startConverting3();"><i class="fa fa-microphone btn btn-danger" aria-hidden="true"></i></button> </br></br>
+
+    
+	<label for="dob">Date Of Birth:</label> <input type="text" id="p4">
+	<button onclick="startConverting4();"><i class="fa fa-microphone btn btn-danger" aria-hidden="true"></i></button> </br></br>
+
+    <label for="an">Aadhar Number:</label> <input type="text" id="p5">
+	<button onclick="startConverting5();"><i class="fa fa-microphone btn btn-danger" aria-hidden="true"></i></button> </br></br>
+
+    <label for="pn">PAN Number:</label> <input type="text" id="p6">
+	<button onclick="startConverting6();"><i class="fa fa-microphone btn btn-danger" aria-hidden="true"></i></button> </br></br>
+
+    <label for="eid">Email ID:</label> <input type="text" id="p7">
+	<button onclick="startConverting7();"><i class="fa fa-microphone btn btn-danger" aria-hidden="true"></i></button> </br></br>
+
+    <label for="add">Address:</label> <input type="text" id="p8">
+	<button onclick="startConverting8();"><i class="fa fa-microphone btn btn-danger" aria-hidden="true"></i></button> </br></br>
+
+
+
+	<input type="submit" value="Submit" class="subb">
+	
+</body>
+
+<script>
+
+		
+  
+		function startConverting1 () 
+		{
+			var result = document.getElementById('p1');
+		    console.log("resulr === " +result);
+
+		if('webkitSpeechRecognition' in window) 
+		{
+			var speechRecognizer = new webkitSpeechRecognition();
+			speechRecognizer.continuous = true;
+			speechRecognizer.interimResults = true;
+			speechRecognizer.lang = 'en-US';
+			speechRecognizer.start();
+
+			var finalTranscripts = '';
+
+			speechRecognizer.onresult = function(event) {
+				var interimTranscripts = '';
+				for(var i = event.resultIndex; i < event.results.length; i++){
+					var transcript = event.results[i][0].transcript;
+					transcript.replace("\n", "<br>");
+					if(event.results[i].isFinal) {
+						finalTranscripts += transcript;
+					}else{
+						interimTranscripts += transcript;
+					}
+				}
+				result.value = finalTranscripts +   interimTranscripts;
+				console.log("8888 "+interimTranscripts);
+				
+				
+				
+			};
+			speechRecognizer.onerror = function (event) 
+			{
+
+			};
+		}
+		else 
+		{
+			result.innerHTML = 'Your browser is not supported. Please download Google chrome or Update your Google chrome!!';
+		}	
+		document.getElementById("p1").innerHTML = "New text!";
+	}
+	function startConverting2 () 
+		{
+			var result = document.getElementById('p2');
+		    console.log("resulr === " +result);
+
+		if('webkitSpeechRecognition' in window) 
+		{
+			var speechRecognizer = new webkitSpeechRecognition();
+			speechRecognizer.continuous = true;
+			speechRecognizer.interimResults = true;
+			speechRecognizer.lang = 'en-US';
+			speechRecognizer.start();
+
+			var finalTranscripts = '';
+
+			speechRecognizer.onresult = function(event) {
+				var interimTranscripts = '';
+				for(var i = event.resultIndex; i < event.results.length; i++){
+					var transcript = event.results[i][0].transcript;
+					transcript.replace("\n", "<br>");
+					if(event.results[i].isFinal) {
+						finalTranscripts += transcript;
+					}else{
+						interimTranscripts += transcript;
+					}
+				}
+				result.value = finalTranscripts +   interimTranscripts;
+				console.log("8888 "+interimTranscripts);
+				
+				
+				
+			};
+			speechRecognizer.onerror = function (event) 
+			{
+
+			};
+		}
+		else 
+		{
+			result.innerHTML = 'Your browser is not supported. Please download Google chrome or Update your Google chrome!!';
+		}	
+		document.getElementById("p2").innerHTML = "New text!";
+	}
+
+	function startConverting3 () 
+		{
+			var result = document.getElementById('p3');
+		    console.log("resulr === " +result);
+
+		if('webkitSpeechRecognition' in window) 
+		{
+			var speechRecognizer = new webkitSpeechRecognition();
+			speechRecognizer.continuous = true;
+			speechRecognizer.interimResults = true;
+			speechRecognizer.lang = 'en-US';
+			speechRecognizer.start();
+
+			var finalTranscripts = '';
+
+			speechRecognizer.onresult = function(event) {
+				var interimTranscripts = '';
+				for(var i = event.resultIndex; i < event.results.length; i++){
+					var transcript = event.results[i][0].transcript;
+					transcript.replace("\n", "<br>");
+					if(event.results[i].isFinal) {
+						finalTranscripts += transcript;
+					}else{
+						interimTranscripts += transcript;
+					}
+				}
+				result.value = finalTranscripts +   interimTranscripts;
+				console.log("8888 "+interimTranscripts);
+				
+				
+				
+			};
+			speechRecognizer.onerror = function (event) 
+			{
+
+			};
+		}
+		else 
+		{
+			result.innerHTML = 'Your browser is not supported. Please download Google chrome or Update your Google chrome!!';
+		}	
+		document.getElementById("p3").innerHTML = "New text!";
+	}
+
+    function startConverting4() 
+		{
+			var result = document.getElementById('p4');
+		    console.log("resulr === " +result);
+
+		if('webkitSpeechRecognition' in window) 
+		{
+			var speechRecognizer = new webkitSpeechRecognition();
+			speechRecognizer.continuous = true;
+			speechRecognizer.interimResults = true;
+			speechRecognizer.lang = 'en-US';
+			speechRecognizer.start();
+
+			var finalTranscripts = '';
+
+			speechRecognizer.onresult = function(event) {
+				var interimTranscripts = '';
+				for(var i = event.resultIndex; i < event.results.length; i++){
+					var transcript = event.results[i][0].transcript;
+					transcript.replace("\n", "<br>");
+					if(event.results[i].isFinal) {
+						finalTranscripts += transcript;
+					}else{
+						interimTranscripts += transcript;
+					}
+				}
+				result.value = finalTranscripts +   interimTranscripts;
+				console.log("8888 "+interimTranscripts);
+				
+				
+				
+			};
+			speechRecognizer.onerror = function (event) 
+			{
+
+			};
+		}
+		else 
+		{
+			result.innerHTML = 'Your browser is not supported. Please download Google chrome or Update your Google chrome!!';
+		}	
+		document.getElementById("p4").innerHTML = "New text!";
+	}
+	function startConverting5 () 
+		{
+			var result = document.getElementById('p5');
+		    console.log("resulr === " +result);
+
+		if('webkitSpeechRecognition' in window) 
+		{
+			var speechRecognizer = new webkitSpeechRecognition();
+			speechRecognizer.continuous = true;
+			speechRecognizer.interimResults = true;
+			speechRecognizer.lang = 'en-US';
+			speechRecognizer.start();
+
+			var finalTranscripts = '';
+
+			speechRecognizer.onresult = function(event) {
+				var interimTranscripts = '';
+				for(var i = event.resultIndex; i < event.results.length; i++){
+					var transcript = event.results[i][0].transcript;
+					transcript.replace("\n", "<br>");
+					if(event.results[i].isFinal) {
+						finalTranscripts += transcript;
+					}else{
+						interimTranscripts += transcript;
+					}
+				}
+				result.value = finalTranscripts +   interimTranscripts;
+				console.log("8888 "+interimTranscripts);
+				
+				
+				
+			};
+			speechRecognizer.onerror = function (event) 
+			{
+
+			};
+		}
+		else 
+		{
+			result.innerHTML = 'Your browser is not supported. Please download Google chrome or Update your Google chrome!!';
+		}	
+		document.getElementById("p5").innerHTML = "New text!";
+	}
+
+	function startConverting6 () 
+		{
+			var result = document.getElementById('p6');
+		    console.log("resulr === " +result);
+
+		if('webkitSpeechRecognition' in window) 
+		{
+			var speechRecognizer = new webkitSpeechRecognition();
+			speechRecognizer.continuous = true;
+			speechRecognizer.interimResults = true;
+			speechRecognizer.lang = 'en-US';
+			speechRecognizer.start();
+
+			var finalTranscripts = '';
+
+			speechRecognizer.onresult = function(event) {
+				var interimTranscripts = '';
+				for(var i = event.resultIndex; i < event.results.length; i++){
+					var transcript = event.results[i][0].transcript;
+					transcript.replace("\n", "<br>");
+					if(event.results[i].isFinal) {
+						finalTranscripts += transcript;
+					}else{
+						interimTranscripts += transcript;
+					}
+				}
+				result.value = finalTranscripts +   interimTranscripts;
+				console.log("8888 "+interimTranscripts);
+				
+				
+				
+			};
+			speechRecognizer.onerror = function (event) 
+			{
+
+			};
+		}
+		else 
+		{
+			result.innerHTML = 'Your browser is not supported. Please download Google chrome or Update your Google chrome!!';
+		}	
+		document.getElementById("p6").innerHTML = "New text!";
+	}
+
+    
+        function startConverting7 () 
+		{
+			var result = document.getElementById('p7');
+		    console.log("resulr === " +result);
+
+		if('webkitSpeechRecognition' in window) 
+		{
+			var speechRecognizer = new webkitSpeechRecognition();
+			speechRecognizer.continuous = true;
+			speechRecognizer.interimResults = true;
+			speechRecognizer.lang = 'en-US';
+			speechRecognizer.start();
+
+			var finalTranscripts = '';
+
+			speechRecognizer.onresult = function(event) {
+				var interimTranscripts = '';
+				for(var i = event.resultIndex; i < event.results.length; i++){
+					var transcript = event.results[i][0].transcript;
+					transcript.replace("\n", "<br>");
+					if(event.results[i].isFinal) {
+						finalTranscripts += transcript;
+					}else{
+						interimTranscripts += transcript;
+					}
+				}
+				result.value = finalTranscripts +   interimTranscripts;
+				console.log("8888 "+interimTranscripts);
+				
+				
+				
+			};
+			speechRecognizer.onerror = function (event) 
+			{
+
+			};
+		}
+		else 
+		{
+			result.innerHTML = 'Your browser is not supported. Please download Google chrome or Update your Google chrome!!';
+		}	
+		document.getElementById("p7").innerHTML = "New text!";
+
+
+        function startConverting8 () 
+		{
+			var result = document.getElementById('p8');
+		    console.log("resulr === " +result);
+
+		if('webkitSpeechRecognition' in window) 
+		{
+			var speechRecognizer = new webkitSpeechRecognition();
+			speechRecognizer.continuous = true;
+			speechRecognizer.interimResults = true;
+			speechRecognizer.lang = 'en-US';
+			speechRecognizer.start();
+
+			var finalTranscripts = '';
+
+			speechRecognizer.onresult = function(event) {
+				var interimTranscripts = '';
+				for(var i = event.resultIndex; i < event.results.length; i++){
+					var transcript = event.results[i][0].transcript;
+					transcript.replace("\n", "<br>");
+					if(event.results[i].isFinal) {
+						finalTranscripts += transcript;
+					}else{
+						interimTranscripts += transcript;
+					}
+				}
+				result.value = finalTranscripts +   interimTranscripts;
+				console.log("8888 "+interimTranscripts);
+				
+				
+				
+			};
+			speechRecognizer.onerror = function (event) 
+			{
+
+			};
+		}
+		else 
+		{
+			result.innerHTML = 'Your browser is not supported. Please download Google chrome or Update your Google chrome!!';
+		}	
+		document.getElementById("p8").innerHTML = "New text!";
+    }
+        }
+</script>
+</html>
